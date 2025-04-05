@@ -116,6 +116,14 @@ class {{PLUGIN_NAMESPACE}}
 
 		$this->loader->add_action( 'admin_menu', $plugin_settings, 'create_menu');
 
+		// $plugin_sample = new Admin\Sample( $this->get_plugin_name(), $this->get_version(), $this->get_db() );
+		
+		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_sample, 'enqueue_styles' );
+		// $this->loader->add_action( 'admin_enqueue_scripts', $plugin_sample, 'enqueue_scripts' );
+
+		// $this->loader->add_action( 'admin_menu', $plugin_sample, 'create_menu');
+
+
 	}
 
 	private function define_frontend_hooks() {
@@ -125,10 +133,10 @@ class {{PLUGIN_NAMESPACE}}
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frontend, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frontend, 'enqueue_scripts' );
 
-		$plugin_sample = new Frontend\Sample( $this->get_plugin_name(), $this->get_version(), $this->get_db() );
+		// $plugin_sample = new Frontend\Sample( $this->get_plugin_name(), $this->get_version(), $this->get_db() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_sample, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_sample, 'enqueue_scripts' );
+		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_sample, 'enqueue_styles' );
+		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_sample, 'enqueue_scripts' );
 
 	}
 
