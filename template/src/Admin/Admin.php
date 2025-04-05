@@ -33,8 +33,8 @@ class Admin {
 		}
 
 		wp_register_style( 'datatables','https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css', array(),'2.2.2', 'all' );
-		wp_register_style( 'datatables-editor',  plugins_url('assets/Editor-2.4.1/css/editor.dataTables.min.css', dirname(__FILE__)), array(), '2.4.1', 'all' );
-		
+		wp_register_style( 'datatables-editor',  plugins_url('assets/Editor-2.4.1/css/editor.dataTables.min.css', {{PLUGIN_CONSTANT}}_PLUGIN_FILE), array(), '2.4.1', 'all' );
+
 		wp_register_style( 'datatables-buttons','https://cdn.datatables.net/buttons/3.2.2/css/buttons.dataTables.css', array(),'3.2.2', 'all' );
 		wp_register_style( 'datatables-select','https://cdn.datatables.net/select/3.0.0/css/select.dataTables.css', array(),'3.0.0', 'all' );
 
@@ -90,8 +90,7 @@ class Admin {
 		}
 
 		wp_register_script( 'datatables','https://cdn.datatables.net/2.2.2/js/dataTables.js',array('jquery'),'2.2.2', true );
-		wp_register_script( 'datatables-editor', plugins_url('assets/Editor-2.4.1/js/dataTables.editor.min.js', dirname(__FILE__)), array( 'datatables' ), '2.4.1', true );
-	
+		wp_register_script( 'datatables-editor', plugins_url('assets/Editor-2.4.1/js/dataTables.editor.min.js', {{PLUGIN_CONSTANT}}_PLUGIN_FILE, array( 'datatables' ), '2.4.1', true );
 		wp_register_script( 'datatables-buttons', 'https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.js', array( 'datatables' ), '3.2.2', true );
 		wp_register_script( 'buttons-datatables', 'https://cdn.datatables.net/buttons/3.2.2/js/buttons.dataTables.js', array( 'datatables' ), '3.2.2', true );
 

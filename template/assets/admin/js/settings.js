@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
                 xhr.setRequestHeader('X-WP-Nonce', {{PLUGIN_NAMESPACE}}.nonce);
             },        
         },
-        table: '#juzhax-settings',
+        table: '#{{PLUGIN_SLUG}}-settings',
         fields: [
             {
                 label: "ID:",
