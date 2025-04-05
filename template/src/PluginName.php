@@ -69,11 +69,9 @@ class {{PLUGIN_NAMESPACE}}
 
 		// If the table doesn't exist, return false
 		if ( !$table_exists ) {
-			$this->display_admin_error("<strong>WP Solver Plugin database table missing</strong>: Please deactivate and reactiave the plugin");
+			$this->display_admin_error("<strong>{{PLUGIN_NAME}} Plugin database table missing</strong>: Please deactivate and reactiave the plugin");
 			return false;
 		}
-
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-solver-updater.php';
 
 		$github_username = $this->get('UPDATE_USERNAME');
 		$token = $this->get('UPDATE_PASSWORD');
@@ -83,7 +81,7 @@ class {{PLUGIN_NAMESPACE}}
 		$updater = new Updater (
 			plugin_dir_path( dirname( __FILE__ ) ) . '{{PLUGIN_SLUG}}.php',
 			$github_username,
-			{{PLUGIN_SLUG}}
+			'{{PLUGIN_SLUG}}'
 		);
 
 		$updater->authorize($token);
@@ -167,7 +165,7 @@ class {{PLUGIN_NAMESPACE}}
 	
 		// Prepare and execute the query
 		$query = $wpdb->prepare(
-			"SELECT value FROM {$wpdb->prefix}{{PLUGIN_PREFIX}}_settings WHERE `name` = %s;", $name
+			"SELECT value FROM {$wpdb->prefix}{{PLUGIN_PREFIX}}settings WHERE `name` = %s;", $name
 		);
 	
 		$result = $wpdb->get_var( $query );

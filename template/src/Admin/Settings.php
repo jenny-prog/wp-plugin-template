@@ -93,7 +93,7 @@ class Settings {
 
 	public function editor() {
 		global $wpdb;
-		$data = Editor::inst( $this->db, $wpdb->prefix . '{{PLUGIN_PREFIX}}_settings AS settings', 'id')
+		$data = Editor::inst( $this->db, $wpdb->prefix . '{{PLUGIN_PREFIX}}settings AS settings', 'id')
 			->fields(
 					Field::inst( 'settings.id', 'id' )->set(false),
 					Field::inst( 'settings.name', 'name' ),
