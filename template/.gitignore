@@ -1,0 +1,59 @@
+# Composer dependencies
+composer.lock
+composer.phar
+
+# Node modules
+/node_modules/
+package-lock.json
+npm-debug.log*
+
+# MacOS metadata
+.DS_Store
+
+# Env files
+.env
+.env.*
+
+# Logs
+*.log
+*.log.*
+
+# IDE/editor settings
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.code-workspace
+
+# PHPUnit / PHPStorm cache
+.phpunit.result.cache
+
+# WP-specific files
+wp-config.php
+wp-content/uploads/
+wp-content/debug.log
+
+# Build artifacts
+/build/
+dist/
+tmp/
+.cache/
+
+# Sass/SCSS cache
+.sass-cache/
+
+# OS / miscellaneous
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Ignore generated assets (optional)
+# /assets/admin/css/
+# /assets/admin/js/
+
+# Ignore test output
+/tests/output/
+
+# GitHub templates (optional)
+.github/

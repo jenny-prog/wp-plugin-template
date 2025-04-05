@@ -1,0 +1,12 @@
+{
+    "name": "{{AUTHOR_NAME}}/{{PLUGIN_SLUG}}",
+    "description": "{{PLUGIN_DESCRIPTION}}",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "{{PLUGIN_NAMESPACE}}\\": "src/"
+        }
+    },
+    "require": {}
+}
