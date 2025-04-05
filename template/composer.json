@@ -8,5 +8,8 @@
             "{{PLUGIN_NAMESPACE}}\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "datatables.net/editor-php": "^2.4",
+        "erusev/parsedown": "^1.7"
+    }
 }

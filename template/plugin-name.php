@@ -1,15 +1,17 @@
 <?php
 
-/*
-Plugin Name: {{PLUGIN_NAME}}
-Plugin URI: {{PLUGIN_URL}}
-Description: {{PLUGIN_DESCRIPTION}}
-Version: 1.0.0
-Author: {{AUTHOR_NAME}}
-Author URI: {{AUTHOR_URL}}
-License: GPL-2.0-or-later
-Text Domain: {{PLUGIN_SLUG}}
-*/
+/**
+ * @wordpress-plugin
+ * Plugin Name:       {{PLUGIN_NAME}}
+ * Plugin URI:        {{PLUGIN_URL}}
+ * Description:       {{PLUGIN_DESCRIPTION}}
+ * Version:           1.0.0
+ * Author:            {{AUTHOR_NAME}}
+ * Author URI:        {{AUTHOR_URL}}
+ * License:           GPL-2.0-or-later
+ * Text Domain:       {{PLUGIN_SLUG}}
+ * Domain Path:       /languages
+ */
 
 defined('WPINC') || die;
 
