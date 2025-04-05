@@ -6,7 +6,7 @@ function renameFiles($outputDir, $pluginSlug, $pluginNamespace)
     $filesToRename = [
         // Key = Old file path, Value = New file path with replacements
         "plugin-name.php" => "$pluginSlug.php",
-        "languages/plugin-name.php" => "languages{$pluginSlug}.pot",
+        "languages/plugin-name.pot" => "languages/{$pluginSlug}.pot",
         "src/PluginName.php" => "src/{$pluginNamespace}.php",
         
         // "src/Admin/PluginNameAdmin.php" => "src/Admin/{$pluginNamespace}Admin.php",
@@ -82,16 +82,17 @@ function replacePlaceholdersRecursively($dir, $replacements)
 }
 
 // User Inputs
-$pluginName = prompt("Enter Plugin Name", "WP Solver");
-$pluginSlug = prompt("Enter Plugin Slug (e.g., my-plugin)", "wp-solver");
-$pluginNamespace = str_replace('-', '', ucwords($pluginSlug, '-')); // e.g., WpSolver
-$pluginConstant = strtoupper(str_replace('-', '_', $pluginSlug));   // e.g., WP_SOLVER
-$pluginPrefix = strtolower(str_replace('-', '_', $pluginSlug)) . '_'; // e.g., wp_solver_
-$pluginURL = prompt("Enter Plugin URL", "https://github.com/juzhax/wp-solver");
+$pluginName = prompt("Enter Plugin Name", "WP Sample");
+$pluginSlug = prompt("Enter Plugin Slug (e.g., my-plugin)", "wp-sample");
+$pluginNamespace = str_replace('-', '', ucwords($pluginSlug, '-')); // Converts 'wp-sample' to 'WpSample'
+$pluginConstant = strtoupper(str_replace('-', '_', $pluginSlug)); // Converts 'wp-sample' to 'WP_SAMPLE'
+$pluginPrefix = strtolower(str_replace('-', '_', $pluginSlug)) . '_'; // Converts 'wp-sample' to 'wp_sample_'
+$pluginFunctionSlug = strtolower(str_replace('-', '_', $pluginSlug)); // Converts 'wp-sample' to 'wp_sample'
+$pluginURL = prompt("Enter Plugin URL", "https://github.com/juzhax/wp-sample");
 $authorName = prompt("Enter Author Name", "juzhax");
 $authorEmail = prompt("Enter Author Email", "juzhax@gmail.com");
 $authorURL = prompt("Enter Author URL", "https://juzhax.com");
-$pluginDescription = prompt("Enter Plugin Short Description", "A WordPress Plugin that solves everything.");
+$pluginDescription = prompt("Enter Plugin Short Description", "A WordPress Plugin that work on everything.");
 
 
 echo "\nYour Inputs:\n";
@@ -99,11 +100,14 @@ echo "Plugin Name: $pluginName\n";
 echo "Plugin Slug: $pluginSlug\n";
 echo "Plugin Namespace: $pluginNamespace\n";
 echo "Plugin URL: $pluginURL\n";
+echo "Plugin Constant: $pluginConstant\n";
+echo "Plugin Prefix: $pluginPrefix\n";
+echo "Plugin Function Slug: $pluginFunctionSlug\n";
 echo "Author Name: $authorName\n";
 echo "Author Email: $authorEmail\n";
 echo "Author URL: $authorURL\n";
 echo "Plugin Description: $pluginDescription\n";
-echo "Plugin Constant: $pluginConstant\n";
+
 
 // Prepare replacements
 $replacements = [
@@ -112,6 +116,7 @@ $replacements = [
     "PLUGIN_NAMESPACE" => $pluginNamespace,
     "PLUGIN_CONSTANT" => $pluginConstant,
     "PLUGIN_PREFIX" => $pluginPrefix,
+    "PLUGIN_FUNCTION_SLUG" => $pluginFunctionSlug,
     "PLUGIN_URL" => $pluginURL,
     "AUTHOR_NAME" => $authorName,
     "AUTHOR_EMAIL" => $authorEmail,

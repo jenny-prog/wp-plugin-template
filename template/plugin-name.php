@@ -56,8 +56,8 @@ register_deactivation_hook(__FILE__, function () {
 /**
  * Run Plugin
  */
-function run_{{PLUGIN_SLUG}}() {
+function run_{{PLUGIN_FUNCTION_SLUG}}() {
 	$plugin = new \{{PLUGIN_NAMESPACE}}\{{PLUGIN_NAMESPACE}}('{{PLUGIN_SLUG}}', {{PLUGIN_CONSTANT}}_VERSION);
 	$plugin->run();
 }
-run_{{PLUGIN_SLUG}}();
+run_{{PLUGIN_FUNCTION_SLUG}}();
