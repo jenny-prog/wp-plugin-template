@@ -62,9 +62,9 @@ class Settings {
 
 		wp_register_script( 
 			$this->slug, 
-			WP_{{PLUGIN_CONSTANT}}_ASSETS_URL . 'admin/js/settings.js', 
+			{{PLUGIN_CONSTANT}}_ASSETS_URL . 'admin/js/settings.js', 
 			array( 'jquery' ), 
-			filemtime( WP_{{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/js/settings.js' ), 
+			filemtime( {{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/js/settings.js' ), 
 			true 
 		);				
 		
@@ -88,7 +88,7 @@ class Settings {
 
     public function display() {
 		$version = $this->version;
-		include_once WP_{{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/partials/datatables.php';
+		include_once {{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/partials/datatables.php';
     }
 
 	public function editor() {

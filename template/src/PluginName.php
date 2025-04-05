@@ -31,7 +31,7 @@ class {{PLUGIN_NAMESPACE}}
 		$this->load_db();
 		$this->set_locale();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
+		$this->define_frontend_hooks();
 
 		
 
@@ -100,7 +100,7 @@ class {{PLUGIN_NAMESPACE}}
 
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Admin\Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -109,7 +109,7 @@ class {{PLUGIN_NAMESPACE}}
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'remove_submenu_page', 80);
 		// $this->loader->add_action( 'wp_loaded', $plugin_admin, 'wp_loaded');
 
-		$plugin_settings = new Settings( $this->get_plugin_name(), $this->get_version(), $this->get_db() );
+		$plugin_settings = new Admin\Settings( $this->get_plugin_name(), $this->get_version(), $this->get_db() );
 		
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_settings, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_settings, 'enqueue_scripts' );
@@ -120,7 +120,7 @@ class {{PLUGIN_NAMESPACE}}
 
 	private function define_frontend_hooks() {
 
-		$plugin_frontend = new Frontend ( $this->get_plugin_name(), $this->get_version() );
+		$plugin_frontend = new Frontend\Frontend ( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frontend, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frontend, 'enqueue_scripts' );

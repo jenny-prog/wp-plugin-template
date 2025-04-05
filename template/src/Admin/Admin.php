@@ -57,9 +57,9 @@ class Admin {
 
 		wp_register_style(
 			$this->plugin_name,
-			WP_{{PLUGIN_CONSTATNT}}_ASSETS_URL . 'admin/css/admin.css',
+			{{PLUGIN_CONSTANT}}_ASSETS_URL . 'admin/css/admin.css',
 			[],
-			filemtime( WP_{{PLUGIN_CONSTATNT}}_ASSETS_PATH . 'admin/css/admin.css' ),
+			filemtime( {{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/css/admin.css' ),
 			'all'
 		);
 
@@ -126,9 +126,9 @@ class Admin {
 
 		wp_register_script(
 			$this->plugin_name,
-			WP_{{PLUGIN_CONSTANT}}_ASSETS_URL . 'admin/js/admin.js',
+			{{PLUGIN_CONSTANT}}_ASSETS_URL . 'admin/js/admin.js',
 			['jquery'],
-			filemtime( WP_{{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/js/admin.js'),
+			filemtime( {{PLUGIN_CONSTANT}}_ASSETS_PATH . 'admin/js/admin.js'),
 			true
 		);
 		
