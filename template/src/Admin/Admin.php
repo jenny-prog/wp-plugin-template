@@ -90,7 +90,7 @@ class Admin {
 		}
 
 		wp_register_script( 'datatables','https://cdn.datatables.net/2.2.2/js/dataTables.js',array('jquery'),'2.2.2', true );
-		wp_register_script( 'datatables-editor', plugins_url('assets/Editor-2.4.1/js/dataTables.editor.min.js', {{PLUGIN_CONSTANT}}_PLUGIN_FILE, array( 'datatables' ), '2.4.1', true );
+		wp_register_script( 'datatables-editor', plugins_url('assets/Editor-2.4.1/js/dataTables.editor.min.js', {{PLUGIN_CONSTANT}}_PLUGIN_FILE), array( 'datatables' ), '2.4.1', true );
 		wp_register_script( 'datatables-buttons', 'https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.js', array( 'datatables' ), '3.2.2', true );
 		wp_register_script( 'buttons-datatables', 'https://cdn.datatables.net/buttons/3.2.2/js/buttons.dataTables.js', array( 'datatables' ), '3.2.2', true );
 
